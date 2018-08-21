@@ -2,4 +2,4 @@
 Wunderdog's shortest edition solution in python.
 
 ## Getting started
-See [Megakolmio](https://github.com/wunderdogsw/wunderpahkina-vol8) for problem description.
+See [The Shortest Edition](https://github.com/wunderdogsw/wunderpahkina-vol8) for problem description.
