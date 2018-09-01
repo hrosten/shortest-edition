@@ -8,16 +8,6 @@ LINE_LEN = 80
 
 ################################################################################
 
-def index_le(arr, x):
-    # Locate the index of the value less than or equal to x from array a
-    for idx, val in enumerate(arr):
-        if val == x:
-            return idx
-        elif val > x:
-            raise ValueError
-
-################################################################################
-
 class Dictionary:
     def __init__(self):
         # key = word length, value = list of key-length words in the dictionary
@@ -49,7 +39,7 @@ class Dictionary:
         word = self.wordsDict[wordsize].pop()
         if not self.wordsDict[wordsize]:
             del self.wordsDict[wordsize]
-        pos = index_le(self.wordLengths,wordsize)
+        pos = self.wordLengths.index(wordsize)
         self.wordAmounts[pos] -= 1
         if self.wordAmounts[pos] == 0:
             del self.wordAmounts[pos]
@@ -102,7 +92,7 @@ class Sequencer:
     def selectOne(self, len):
         # Take one len-length key: reduce supply and remove from keys
         # if it was the last one
-        pos = index_le(self.keys, len)
+        pos = self.keys.index(len)
         self.supply[pos] -= 1
         if not self.supply[pos]:
             del self.supply[pos]
